@@ -11,10 +11,7 @@ RUN mkdir /root/opendaylight
 COPY distribution-karaf-0.6.0-Carbon.tar.gz /root/opendaylight
 RUN tar xvfz /root/opendaylight/distribution-karaf-0.6.0-Carbon.tar.gz -C /root/opendaylight
 
-# Expose ports
-#EXPOSE 443
-#EXPOSE 80
-
 # Entry point
-CMD /bin/bash
+RUN touch /tmp/faa && /root/opendaylight/distribution-karaf-0.6.0-Carbon/bin/start && touch /tmp/foo
+CMD ["/bin/bash"]
 
