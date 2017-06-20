@@ -13,6 +13,8 @@ RUN tar xvfz /root/opendaylight/distribution-karaf-0.6.0-Carbon.tar.gz -C /root/
 RUN sed -i "21s/out/stdout/" /root/opendaylight/distribution-karaf-0.6.0-Carbon/etc/org.ops4j.pax.logging.cfg
 
 EXPOSE 8101
+EXPOSE 1099
+EXPOSE 44444
 
 # Entry point
 COPY start_karaf.sh /root/
