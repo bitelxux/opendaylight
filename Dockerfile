@@ -10,8 +10,11 @@ RUN yum install -y vim wget curl java-1.8.0-openjdk-headless
 RUN mkdir /root/opendaylight
 COPY distribution-karaf-0.6.0-Carbon.tar.gz /root/opendaylight
 RUN tar xvfz /root/opendaylight/distribution-karaf-0.6.0-Carbon.tar.gz -C /root/opendaylight
+RUN sed -i "21s/out/stdout/" /root/opendaylight/distribution-karaf-0.6.0-Carbon/etc/org.ops4j.pax.logging.cfg
+
+EXPOSE 8101
 
 # Entry point
-RUN touch /tmp/faa && /root/opendaylight/distribution-karaf-0.6.0-Carbon/bin/start && touch /tmp/foo
-CMD ["/bin/bash"]
+COPY start_karaf.sh /root/
+CMD ["/root/start_karaf.sh"]
 
