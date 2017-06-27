@@ -8,7 +8,7 @@ To show help:
 make help
 ```
 
-To create the Docker images and deploy the cluster:
+To create the Docker base image and deploy the cluster:
 
 ```
 make all
