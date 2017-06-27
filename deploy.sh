@@ -1,4 +1,0 @@
-for i in 1 2 3;
-do
-  sudo docker run -h server-0${i} --name server-0${i} --net 10.100.100.0 --ip 10.100.100.10${i} --add-host dockerhost:10.100.100.1 -itd opendaylight
-done;
