@@ -1,8 +1,37 @@
 # opendaylight
 
-The repo does not contain the OpenDayLight distribution.
-You have to download it from
+Deployes an OpenDayLight base on Docker
 
-https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/distribution-karaf/0.6.0-Carbon/distribution-karaf-0.6.0-Carbon.tar.gz
+To show help:
 
-to the same directory you are building the image.
+```
+make help
+```
+
+To create the Docker image and deploy the cluster:
+
+```
+make all
+```
+
+To login into the servers:
+
+```
+sudo docker exec -it <server> bash
+```
+
+To login into ODL console:
+
+```
+ssh -p 8101 karaf@<server>
+```
+
+password: `karaf`
+
+To access to DLUX interface:
+
+```
+http://<server>:8181/index.html
+```
+
+
