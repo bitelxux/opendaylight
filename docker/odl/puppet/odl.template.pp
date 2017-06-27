@@ -1,7 +1,7 @@
 class { 'opendaylight':
    enable_ha     => true,
    ha_node_ips   => ['10.100.100.101', '10.100.100.102', '10.100.100.103'],
-   ha_node_index => 1,
+   ha_node_index => INDEX,
    default_features =>  ['config', 'standard', 'region', 'package', 'kar', 'ssh', 'management'],
    extra_features   =>  ['odl-dlux-core',
                          'odl-restconf',
@@ -11,6 +11,10 @@ class { 'opendaylight':
                          'odl-dluxapps-nodes',
                          'odl-dluxapps-topology',
                          'odl-dluxapps-yangutils',
-                         'odl-dluxapps-yangman'],
+                         'odl-dluxapps-yangman',
+			 'odl-mdsal-clustering',
+                         'odl-openflowplugin-flow-services',
+                         'http',
+                        ],
 }
 

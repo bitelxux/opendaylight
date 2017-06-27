@@ -8,7 +8,7 @@ To show help:
 make help
 ```
 
-To create the Docker image and deploy the cluster:
+To create the Docker images and deploy the cluster:
 
 ```
 make all
@@ -33,5 +33,7 @@ To access to DLUX interface:
 ```
 http://<server>:8181/index.html
 ```
+To $MS users:
 
-
+- Create a virtual machine running Centos7 ( However you preffer ).
+- Run the previous commands on it.
